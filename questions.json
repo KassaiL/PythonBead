@@ -1,12 +1,17 @@
 [
     {
-        "question": "Mi Magyarország fővárosa?",
-        "options": ["Debrecen", "Budapest", "Szeged", "Pécs"],
-        "answer": "Budapest"
+        "question": "Milyen néven alapították meg a klubot??",
+        "options": ["Manchester United FC", "Manchester City FC", "Newton Heath (L&YR) FC", "Everton FC"],
+        "answer": "Newton Heath (L&YR) FC"
     },
     {
-        "question": "Melyik évben történt az 1848-as forradalom?",
-        "options": ["1848", "1849", "1850", "1847"],
-        "answer": "1848"
+        "question": "Ki volt a triplázó csapat edzője?",
+        "options": ["Sir Matt Busby", "Sir Robert Charlton", "Sir Alex Ferguson", "José Mourinho"],
+        "answer": "Sir Alex Ferguson"
+    },
+    {
+        "question": "Melyik bajnokságba játszik a csapat?",
+        "options": ["Angol", "Német", "Olasz", "Spanyol"],
+        "answer": "Angol"
     }
 ]

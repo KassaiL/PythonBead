@@ -17,7 +17,7 @@ class ClassKLR:
     def __init__(self, root):
         """Az osztály inicializálója, amely létrehozza a GUI elemeket és betölti a kérdéseket."""
         self.root = root
-        self.root.title("Kvízjáték")
+        self.root.title("Manchester United kvíz")
         self.questions = load_questions_from_file("questions.json")
         self.current_question_index = 0
         self.score = 0
