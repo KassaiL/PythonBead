@@ -1,0 +1,12 @@
+[
+    {
+        "question": "Mi Magyarország fővárosa?",
+        "options": ["Debrecen", "Budapest", "Szeged", "Pécs"],
+        "answer": "Budapest"
+    },
+    {
+        "question": "Melyik évben történt az 1848-as forradalom?",
+        "options": ["1848", "1849", "1850", "1847"],
+        "answer": "1848"
+    }
+]
