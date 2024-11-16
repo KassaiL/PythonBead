@@ -1,30 +1,24 @@
 import tkinter as tk
 from tkinter import messagebox
+import json
 
+def load_questions_from_file(file_path):
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Hiba: A '{file_path}' fájl nem található.")
+        return []
+    except json.JSONDecodeError:
+        print(f"Hiba: A '{file_path}' fájl hibás formátumú.")
+        return []
 
-class QuizApp:
+class ClassKLR:
     def __init__(self, root):
         """Az osztály inicializálója, amely létrehozza a GUI elemeket és betölti a kérdéseket."""
         self.root = root
         self.root.title("Kvízjáték")
-
-        self.questions = [
-            {
-                "question": "Mi Magyarország fővárosa?",
-                "options": ["Debrecen", "Budapest", "Szeged", "Pécs"],
-                "answer": "Budapest"
-            },
-            {
-                "question": "Melyik évben történt az 1848-as forradalom?",
-                "options": ["1848", "1849", "1850", "1847"],
-                "answer": "1848"
-            },
-            {
-                "question": "Melyik bolygó a Naprendszer legnagyobb bolygója?",
-                "options": ["Mars", "Föld", "Jupiter", "Szaturnusz"],
-                "answer": "Jupiter"
-            }
-        ]
+        self.questions = load_questions_from_file("questions.json")
         self.current_question_index = 0
         self.score = 0
 
@@ -76,9 +70,7 @@ class QuizApp:
         messagebox.showinfo("Játék vége", f"Kvíz vége! Az eredményed: {self.score}/{len(self.questions)} pont.")
         self.root.destroy()
 
-
-# Tkinter főciklus létrehozása és alkalmazás indítása
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = QuizApp(root)
-    root.mainloop()
+def FunctionKLR():
+    root = tk.Tk()  # Létrehozzuk a Tkinter ablakot
+    app = ClassKLR(root)  # Létrehozzuk a kvízjáték osztály példányát
+    root.mainloop()  # Elindítjuk a Tkinter főciklust
