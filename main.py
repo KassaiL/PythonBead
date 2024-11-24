@@ -1,3 +1,4 @@
 from KLRmodul import FunctionKLR
 
-FunctionKLR()
+if __name__ == "__main__":
+    FunctionKLR()

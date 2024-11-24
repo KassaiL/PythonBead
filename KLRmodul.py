@@ -67,7 +67,6 @@ class ClassKLR:
         self.root.destroy()
 
 def FunctionKLR():
-    if __name__ == "__main__":
-        root = tk.Tk()  #  Tkinter ablakot
-        app = ClassKLR(root)  # A kvízjáték osztály példánya
-        root.mainloop()  # A Tkinter főciklust
+    root = tk.Tk()  #  Tkinter ablakot
+    app = ClassKLR(root)  # A kvízjáték osztály példánya
+    root.mainloop()  # A Tkinter főciklust
