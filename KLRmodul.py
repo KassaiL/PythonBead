@@ -14,22 +14,18 @@ def load_questions_from_file(file_path):
         return []
 
 class ClassKLR:
+    """Az osztály inicializálója."""
     def __init__(self, root):
-        """Az osztály inicializálója, amely létrehozza a GUI elemeket és betölti a kérdéseket."""
         self.root = root
         self.root.title("Manchester United kvíz")
         self.questions = load_questions_from_file("questions.json")
         self.current_question_index = 0
         self.score = 0
-
-        # GUI elemek létrehozása
         self.create_widgets()
-
-        # Első kérdés betöltése
         self.load_question()
 
+    """Létrehozza a GUI elemeket."""
     def create_widgets(self):
-        """Létrehozza a GUI elemeket (címke, gombok)."""
         self.question_label = tk.Label(self.root, text="", font=("Arial", 16), wraplength=400, justify="center")
         self.question_label.pack(pady=20)
 
@@ -40,8 +36,8 @@ class ClassKLR:
             btn.pack(pady=5)
             self.option_buttons.append(btn)
 
+    """Betölti az aktuális kérdést és frissíti a GUI-t."""
     def load_question(self):
-        """Betölti az aktuális kérdést és frissíti a GUI-t."""
         if self.current_question_index < len(self.questions):
             question_data = self.questions[self.current_question_index]
             self.question_label.config(text=question_data["question"])
@@ -50,8 +46,8 @@ class ClassKLR:
         else:
             self.end_quiz()
 
+    """Ellenőrzi a választ, és továbblép a következő kérdésre."""
     def check_answer(self, selected_index):
-        """Ellenőrzi a választ, és továbblép a következő kérdésre."""
         question_data = self.questions[self.current_question_index]
         selected_option = question_data["options"][selected_index]
         correct_answer = question_data["answer"]
@@ -65,12 +61,13 @@ class ClassKLR:
         self.current_question_index += 1
         self.load_question()
 
+    """Befejezi a kvízt, és megjeleníti az eredményt."""
     def end_quiz(self):
-        """Befejezi a kvízt, és megjeleníti az eredményt."""
         messagebox.showinfo("Játék vége", f"Kvíz vége! Az eredményed: {self.score}/{len(self.questions)} pont.")
         self.root.destroy()
 
 def FunctionKLR():
-    root = tk.Tk()  # Létrehozzuk a Tkinter ablakot
-    app = ClassKLR(root)  # Létrehozzuk a kvízjáték osztály példányát
-    root.mainloop()  # Elindítjuk a Tkinter főciklust
+    if __name__ == "__main__":
+        root = tk.Tk()  #  Tkinter ablakot
+        app = ClassKLR(root)  # A kvízjáték osztály példánya
+        root.mainloop()  # A Tkinter főciklust
