@@ -4,10 +4,11 @@ Egy olyan kvíz a kedvenc football csapatomról, amit bármikor lehet bővíteni
 A feladat elkészítésében fontosnak tartottam a könnyű használatot és kezelésést.
 
 Modulok és függvényei:
-    JSON
-
+    
     TKINTER
         messagebox
+    
+    JSON
 
     KLRmodul
         __init__ (inicializálás)
