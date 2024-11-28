@@ -63,7 +63,7 @@ class ClassKLR:
 
     """Befejezi a kvízt, és megjeleníti az eredményt."""
     def end_quiz(self):
-        messagebox.showinfo("Játék vége", f"Kvíz vége! Az eredményed: {self.score}/{len(self.questions)} pont.")
+        messagebox.showinfo("Játék vége", f"Itt a kvíz vége! Az eredményed: {self.score}/{len(self.questions)} pontból.")
         self.root.destroy()
 
 def FunctionKLR():
