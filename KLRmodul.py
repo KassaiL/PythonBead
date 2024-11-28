@@ -54,9 +54,9 @@ class ClassKLR:
 
         if selected_option == correct_answer:
             self.score += 1
-            messagebox.showinfo("Helyes válasz", "Helyes!")
+            messagebox.showinfo("Válaszod:", "Helyes!")
         else:
-            messagebox.showinfo("Rossz válasz", f"Rossz! A helyes válasz: {correct_answer}")
+            messagebox.showinfo("Válaszod:", f"Rossz! A helyes válasz: {correct_answer}")
 
         self.current_question_index += 1
         self.load_question()
